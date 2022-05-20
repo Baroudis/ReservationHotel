@@ -1,0 +1,88 @@
+<div class="container" id="lemain">
+    <h3 class="pb-3 mb-4 font-italic border-bottom">
+        Toues les chambres
+    </h3>
+    <select (click)="chambrefiltrer()" [(ngModel)]="min">
+        <option value="50">50</option>
+        <option value="100">100</option>
+        <option value="150">150</option>
+        <option value="300">300</option>
+    </select>
+    <select (click)="chambrefiltrer()" [(ngModel)]="max">
+        <option value="50">50</option>
+        <option value="100">100</option>
+        <option value="150">150</option>
+        <option value="300">300</option>
+    </select>
+    <div>
+        <div class="row">
+            <div class="col-md-4" *ngFor="let c of chambre">
+                <!-- *ngFor="let c of chambre.slice(0,5) -->
+                <div class="card mb-4 text-white bg-dark" *ngIf=c.disponible>
+                    <img class="card-img-top" src={{c.img}} alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{c.title}}</h5>
+                        <p class="card-text">{{(c.description).substr(0,90)}} ...</p>
+                        <p class="card-text">Prix : {{c.prix}} € / jour</p>
+                        <a class="btn btn-outline-light btn-sm" (click)="ouvrir(c)">plus de détail</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container d-none" id="reserva">
+    <h3 class="pb-3 mb-4 font-italic border-bottom">
+        Toues les chambres
+    </h3>
+    <div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card mb-4 text-white bg-dark">
+                    <img class="card-img-top" src={{reservation.img}} alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{reservation.title}}</h5>
+                        <p class="card-text">{{reservation.description}}</p>
+                        <p class="card-text">Prix : {{reservation.prix}} € / jour</p>
+                        <!-- <a class="btn btn-outline-light btn-sm" >Réservé</a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <select (focusout)="reserveA()" [(ngModel)]="selectedOptionA">
+        <option value="">Choisissez votre date d'arrivé</option>
+        <option *ngFor="let d of dateA">
+            {{d.date}}
+        </option>
+    </select>
+
+    <select (focusout)="reserveD()" [(ngModel)]="selectedOptionD">
+        <option value="">Choisissez votre date de départ</option>
+        <option *ngFor="let d of dateA">
+            {{d.date}}
+        </option>
+    </select>
+
+    <button (click)="calcule()">Calcule</button>
+
+    <form #nomDuClient="ngForm" (ngSubmit)="saveProduit(nomDuClient.value)">
+        <input id="lenom" type="text" name="nom" value="" placeholder="Votre Nom" ngModel>
+        <button type="submit" class="btn btn-primary">Save prod</button>
+    </form>
+
+
+
+</div>
+
+<!-- <form #nomDuClient = "ngForm" (ngSubmit)="saveProduit(nomDuClient.value)"  >
+    <input type="text" name="nom" value="" ngModel>
+<button type="submit" class="btn btn-primary">Save prod</button>
+</form> -->

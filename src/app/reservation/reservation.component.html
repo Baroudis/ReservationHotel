@@ -1,0 +1,25 @@
+<p>reservation works!</p>
+
+
+
+
+<table class="table ">
+    <thead>
+        <tr>
+            <th>Numero Réservation</th>
+            <th>Nom</th>
+            <th>Chambre</th>
+            <th>Durée</th>
+            <th>Prix</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let r of reserv">
+        <tr >
+            <td>{{r.id}}</td>
+            <td>{{r.nom}}</td>
+            <td>{{r.title}}</td>
+            <td>du {{r.dateArrive}} au {{r.dateDepart}}</td>
+            <td>{{r.total}}</td>
+        </tr>
+    </tbody>
+</table>

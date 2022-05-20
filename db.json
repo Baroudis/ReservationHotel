@@ -1,0 +1,156 @@
+{
+  "chambre": [
+    {
+      "idchambre": 1,
+      "title": "Chambre VIP",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tristique faucibus sem luctus euismod. Maecenas suscipit ultrices lorem et vulputate. Duis mattis nibh vel urna efficitur maximus. Sed posuere aliquam enim eget posuere. Praesent sollicitudin, sem id vehicula hendrerit, dui orci volutpat sem, eget maximus velit eros in eros. Donec luctus, erat sed elementum sagittis, augue nulla tincidunt dolor, et faucibus metus neque non nisi. Vivamus non elit semper, lacinia nibh quis, posuere augue.",
+      "prix": 200,
+      "img": "assets/chambre.jpg",
+      "disponible": true
+    },
+    {
+      "idchambre": 2,
+      "title": "Chambre confortable",
+      "description": "Nulla ac nunc in enim tincidunt pharetra ut sit amet urna. Aenean ornare molestie odio, quis laoreet libero tristique vel. Praesent tempus convallis sagittis. Quisque orci orci, elementum ut eros sit amet, vehicula volutpat dolor. Aliquam erat volutpat. Pellentesque viverra magna mi. Ut ultricies, velit et placerat laoreet, mauris mi venenatis odio, nec luctus magna lacus vitae ipsum. Etiam interdum, massa nec vulputate convallis, odio ex pulvinar nisi, nec pharetra nisi lectus sit amet nibh. Pellentesque interdum at purus a tempus.",
+      "prix": 100,
+      "img": "assets/chambre2.jpg",
+      "disponible": true
+    },
+    {
+      "idchambre": 3,
+      "title": "Chambre vue sur mer",
+      "description": "Maecenas sollicitudin, ante ac venenatis hendrerit, urna lorem vestibulum dui, in vulputate nisi sem eu nunc. Cras ut malesuada metus, at mattis nulla. Integer eleifend libero quis felis placerat, a suscipit augue mollis. Duis ipsum elit, volutpat a tristique non, consequat et dui. Mauris eleifend libero sed massa bibendum vulputate. Mauris sed placerat nisl, sed lobortis justo. Integer placerat gravida lobortis. Ut egestas ex vel lobortis fringilla. Fusce et neque scelerisque, finibus nunc sit amet, blandit sem. Nullam mattis sit amet ipsum scelerisque sagittis.",
+      "prix": 150,
+      "img": "assets/chambre3.jpg",
+      "disponible": true
+    },
+    {
+      "idchambre": 4,
+      "title": "Chambre petite",
+      "description": "Duis fermentum massa sit amet risus lobortis pulvinar. Maecenas laoreet vestibulum dolor id finibus. Proin fringilla mollis purus, id interdum dolor placerat vitae. Praesent id vehicula tortor, non volutpat erat. In ac ultrices justo. Etiam non ultrices orci. Etiam nulla libero, gravida a tellus id, dignissim tristique neque. Vestibulum placerat, ligula vitae fringilla volutpat, turpis ligula dapibus diam, quis molestie sem neque venenatis quam. Curabitur scelerisque semper urna ac iaculis. In efficitur quam mauris, non fermentum neque hendrerit vitae. Curabitur sollicitudin, mauris a cursus interdum, massa ligula cursus felis, nec viverra quam nisl nec mi.",
+      "prix": 60,
+      "img": "assets/chambre4.jpg",
+      "disponible": true
+    },
+    {
+      "idchambre": 5,
+      "title": "Chambre moyenne",
+      "description": "Vestibulum eget ex ante. Cras suscipit, purus non scelerisque dictum, elit enim faucibus mauris, a vehicula mauris erat non dolor. Sed malesuada ipsum id eros mollis finibus. Integer consequat blandit felis, ut maximus felis sodales at. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla sit amet est imperdiet, viverra turpis ut, feugiat nibh. Integer a cursus nibh, in pellentesque nunc.",
+      "prix": 80,
+      "img": "assets/chambre5.jpg",
+      "disponible": true
+    },
+    {
+      "idchambre": 6,
+      "title": "Chambre grande",
+      "description": "Quisque sit amet venenatis neque, quis luctus leo. Fusce condimentum vitae urna in auctor. Quisque turpis eros, tempus vitae risus sed, feugiat sagittis justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Mauris a egestas libero, in iaculis tellus. Sed ornare tincidunt sem, et dapibus est elementum quis. Nullam molestie nulla ut augue imperdiet elementum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In eu ex non neque viverra ullamcorper. Duis ac purus non leo faucibus consectetur ac ut diam. Proin lectus dolor, molestie ut augue in, tempus iaculis ante.",
+      "prix": 140,
+      "img": "assets/chambre6.jpg",
+      "disponible": true
+    },
+    {
+      "idchambre": 7,
+      "title": "Chambre poubelle",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet vulputate orci. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec aliquet quam nec ex laoreet, malesuada lobortis dolor tristique. Praesent enim sapien, tincidunt non placerat eget, aliquam ut nunc. Phasellus egestas est sit amet diam mollis scelerisque. In pharetra turpis sed sem sagittis, a aliquam urna ornare. Nulla ex tellus, lobortis nec urna nec, ultrices interdum purus. Nulla dapibus gravida neque. Donec viverra suscipit sollicitudin. Proin rhoncus ipsum dui, eu hendrerit erat dignissim ut. Fusce sodales, felis et sagittis vulputate, tellus magna scelerisque arcu, sed posuere neque neque sed odio.",
+      "prix": 35,
+      "img": "assets/chambre7.jpg",
+      "disponible": true
+    },
+    {
+      "idchambre": 8,
+      "title": "Chambre ghetto",
+      "description": "Donec turpis nibh, sagittis at porttitor non, elementum pretium urna. Quisque faucibus varius risus, nec bibendum erat hendrerit sed. Suspendisse tincidunt lectus quis diam venenatis pretium. Phasellus a turpis sem. Etiam auctor lectus a sodales dignissim. Maecenas rutrum tempor mi, quis pretium odio. Vivamus ac neque quis libero tristique mattis at eu purus. Phasellus in felis eget sem congue commodo. Mauris auctor ipsum et ante iaculis semper. Donec semper iaculis mollis.",
+      "prix": 25,
+      "img": "assets/chambre8.jpg",
+      "disponible": false
+    },
+    {
+      "idchambre": 9,
+      "title": "Chambre vide",
+      "description": "Nam purus libero, dictum non mi at, pellentesque auctor nisi. In risus nunc, ornare sit amet rutrum ac, pulvinar a tellus. Aenean eleifend bibendum odio viverra imperdiet. Sed lacinia arcu id pulvinar molestie. Aliquam erat volutpat. Curabitur tristique dictum orci, eu ornare metus. Praesent rutrum quam in sodales cursus. Sed molestie elit nibh, nec faucibus dui commodo quis. Sed in nulla ac lacus pellentesque vestibulum.",
+      "prix": 10,
+      "img": "assets/chambre9.jpg",
+      "disponible": true
+    },
+    {
+      "idchambre": 10,
+      "title": "chambre a réparer",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eget ultrices enim. Ut imperdiet mi in erat dictum, et ullamcorper dui faucibus. Maecenas dignissim enim sed felis consequat pharetra. Pellentesque tincidunt nibh vel justo lacinia, id sollicitudin mauris varius. Nunc id tincidunt ligula. Phasellus dolor arcu, venenatis id mauris tempus, mattis facilisis lectus. Maecenas ac magna malesuada orci porttitor ultrices ut eu mauris. Nullam facilisis elit non lectus sollicitudin, ut rutrum velit euismod. Aliquam laoreet, sapien vitae pulvinar dictum, erat mi viverra est, nec ultricies ex ante vel ligula.",
+      "prix": 1,
+      "img": "assets/chambre10.jpg",
+      "disponible": true
+    }
+  ],
+  "datearrive": [
+    {
+      "id": 1,
+      "date": "01/01/2023"
+    },
+    {
+      "id": 2,
+      "date": "01/02/2023"
+    },
+    {
+      "id": 3,
+      "date": "01/03/2023"
+    },
+    {
+      "id": 4,
+      "date": "01/04/2023"
+    },
+    {
+      "id": 5,
+      "date": "01/05/2023"
+    }
+  ],
+  "datedepart": [
+    {
+      "id": 1,
+      "date": "01/01/2023"
+    },
+    {
+      "id": 2,
+      "date": "01/02/2023"
+    },
+    {
+      "id": 3,
+      "date": "01/03/2023"
+    },
+    {
+      "id": 4,
+      "date": "01/04/2023"
+    },
+    {
+      "id": 5,
+      "date": "01/05/2023"
+    }
+  ],
+  "reservation": [
+    {
+      "idchambre": 3,
+      "title": "Chambre vue sur mer",
+      "description": "Maecenas sollicitudin, ante ac venenatis hendrerit, urna lorem vestibulum dui, in vulputate nisi sem eu nunc. Cras ut malesuada metus, at mattis nulla. Integer eleifend libero quis felis placerat, a suscipit augue mollis. Duis ipsum elit, volutpat a tristique non, consequat et dui. Mauris eleifend libero sed massa bibendum vulputate. Mauris sed placerat nisl, sed lobortis justo. Integer placerat gravida lobortis. Ut egestas ex vel lobortis fringilla. Fusce et neque scelerisque, finibus nunc sit amet, blandit sem. Nullam mattis sit amet ipsum scelerisque sagittis.",
+      "prix": 150,
+      "img": "assets/chambre3.jpg",
+      "disponible": true,
+      "nom": "bafg",
+      "dateArrive": "01/02/2023",
+      "dateDepart": "01/05/2023",
+      "total": 450,
+      "id": "v3JgKzj"
+    },
+    {
+      "idchambre": 3,
+      "title": "Chambre vue sur mer",
+      "description": "Maecenas sollicitudin, ante ac venenatis hendrerit, urna lorem vestibulum dui, in vulputate nisi sem eu nunc. Cras ut malesuada metus, at mattis nulla. Integer eleifend libero quis felis placerat, a suscipit augue mollis. Duis ipsum elit, volutpat a tristique non, consequat et dui. Mauris eleifend libero sed massa bibendum vulputate. Mauris sed placerat nisl, sed lobortis justo. Integer placerat gravida lobortis. Ut egestas ex vel lobortis fringilla. Fusce et neque scelerisque, finibus nunc sit amet, blandit sem. Nullam mattis sit amet ipsum scelerisque sagittis.",
+      "prix": 150,
+      "img": "assets/chambre3.jpg",
+      "disponible": true,
+      "nom": "bafg",
+      "dateArrive": "01/02/2023",
+      "dateDepart": "01/05/2023",
+      "total": 450,
+      "id": "h-R3sLb"
+    }
+  ]
+}
