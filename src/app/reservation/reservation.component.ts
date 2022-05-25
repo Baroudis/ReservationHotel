@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth.service';
 import { ReservationService } from '../services/reservation.service';
 
 
@@ -10,10 +11,11 @@ import { ReservationService } from '../services/reservation.service';
 export class ReservationComponent implements OnInit {
   reservation : any;
 
-  constructor(private reservationservice: ReservationService) { } 
+  constructor(private reservationservice: ReservationService, private as: AuthService) { } 
 
   ngOnInit(): void {
     this.reservations()
+    console.log(this.as.Token)
   }
 
 

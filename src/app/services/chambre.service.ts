@@ -30,4 +30,12 @@ export class ChambreService {
     return this.http.get("http://localhost:3000/chambre?prix_gte="+min+"&prix_lte="+max);
   }
 
+  getchambresimple(){
+    return this.http.get("http://localhost:3000/chambre?type=simple");
+  }
+
+  getchambreType(mots:any){
+    return this.http.get("http://localhost:3000/chambre?type="+mots);
+  }
+
 }

@@ -12,21 +12,41 @@ import { ReservationComponent } from './reservation/reservation.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component'
 
+import { AuthModule } from '@auth0/auth0-angular';
+import { LoginComponent } from './login/login.component';
+import { JwtModule, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { JwtHelperService } from '@auth0/angular-jwt';
+//import { FormBuilder } from '@angular/forms';
+//import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
     ChambreComponent,
     ServicesComponent,
     ReservationComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    AuthModule.forRoot({
+      domain:'dev-mvss-c6p.eu.auth0.com',
+      clientId: 'qC0JwInfJAyoicru9SngRGYsvkpsXDQh'
+    }),
+    JwtModule.forRoot({
+      config: {
+        tokenGetter : () => localStorage.getItem('access_token')
+      }
+    })
+    //ReactiveFormsModule
+     //FormBuilder
+
   ],
-  providers: [],
+  providers: [{provide:JWT_OPTIONS, useValue:JWT_OPTIONS}, JwtHelperService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

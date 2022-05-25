@@ -54,6 +54,7 @@ export class ChambreComponent implements OnInit {
   nom: any ='hello ';
   min:any 
   max:any 
+  mots:any
   
   
   nomDuClient:any;
@@ -84,6 +85,47 @@ export class ChambreComponent implements OnInit {
       this.chambre = data;
       console.log(this.chambre)
       // this.chambrefiltrer();
+  })
+}
+chambreSimple(){
+  this.chambreService.getchambresimple().subscribe(data=> {
+    this.chambre = data
+    document.getElementById("simple")?.classList.add("btn-info")
+    document.getElementById("double")?.classList.remove("btn-info")
+    document.getElementById("triple")?.classList.remove("btn-info")
+    document.getElementById("quadruple")?.classList.remove("btn-info")
+
+    console.log(this.chambre)
+  })
+}
+chambreDouble(){
+  this.chambreService.getchambreType("double").subscribe(data=> {
+    this.chambre = data
+    document.getElementById("simple")?.classList.remove("btn-info")
+    document.getElementById("double")?.classList.add("btn-info")
+    document.getElementById("triple")?.classList.remove("btn-info")
+    document.getElementById("quadruple")?.classList.remove("btn-info")
+    console.log(this.chambre)
+  })
+}
+chambreTriple(){
+  this.chambreService.getchambreType("triple").subscribe(data=> {
+    this.chambre = data
+    document.getElementById("simple")?.classList.remove("btn-info")
+    document.getElementById("double")?.classList.remove("btn-info")
+    document.getElementById("triple")?.classList.add("btn-info")
+    document.getElementById("quadruple")?.classList.remove("btn-info")
+    console.log(this.chambre)
+  })
+}
+chambreQuadruple(){
+  this.chambreService.getchambreType("quadruple").subscribe(data=> {
+    this.chambre = data
+    document.getElementById("simple")?.classList.remove("btn-info")
+    document.getElementById("double")?.classList.remove("btn-info")
+    document.getElementById("triple")?.classList.remove("btn-info")
+    document.getElementById("quadruple")?.classList.add("btn-info")
+    console.log(this.chambre)
   })
 }
 
@@ -152,9 +194,7 @@ export class ChambreComponent implements OnInit {
   }
 
   saveProduit(nomDuClient: any) {
-    //console.log(nomDuClient)
-    //let data = nomDuClient.value
-    // this.reservation.nom = nomDuClient
+
   
     this.reservation.nom = nomDuClient.nom
     this.reservation.dateArrive = this.selectedOptionA

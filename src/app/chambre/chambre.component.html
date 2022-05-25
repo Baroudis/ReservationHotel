@@ -1,4 +1,4 @@
-<div class="container" id="lemain">
+<div class="container-fluid" id="lemain">
     <h3 class="pb-3 mb-4 font-italic border-bottom">
         Toues les chambres
     </h3>
@@ -16,21 +16,37 @@
     </select>
     <div>
         <div class="row">
-            <div class="col-md-4" *ngFor="let c of chambre">
-                <!-- *ngFor="let c of chambre.slice(0,5) -->
-                <div class="card mb-4 text-white bg-dark" *ngIf=c.disponible>
-                    <img class="card-img-top" src={{c.img}} alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">{{c.title}}</h5>
-                        <p class="card-text">{{(c.description).substr(0,90)}} ...</p>
-                        <p class="card-text">Prix : {{c.prix}} € / jour</p>
-                        <a class="btn btn-outline-light btn-sm" (click)="ouvrir(c)">plus de détail</a>
+                <div class="col-md-4 me-auto mt-5 ms-1"   [(ngModel)]="mots">
+                    <button id="simple" class="btn  ms-1 align-items-start border border-dark" (click)="chambreSimple()"  value="simple">Chambre Simple</button>
+                    <button id="double" class="btn  ms-1 align-items-start border border-dark" (click)="chambreDouble()" value ="double">Chambre double</button>
+                    <button id="triple" class="btn  ms-1 align-items-start border border-dark" (click)="chambreTriple()" value ="triple">Chambre Triple</button>
+                    <button id="quadruple" class="btn  ms-1 align-items-start border border-dark" (click)="chambreQuadruple()" value="quadruple">Chambre Quadruple</button>
+                    
+                </div>
+            <div class="col-md-8 ms-auto">
+                <div class="row">
+                    <div class="col-md-4 mt-auto" *ngFor="let c of chambre">
+                        <!-- *ngFor="let c of chambre.slice(0,5) -->
+                        <div class="card mb-4 text-white bg-dark" *ngIf=c.disponible>
+                            <img class="card-img-top" src={{c.img}} alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">{{c.title}}</h5>
+                                <p class="card-text">{{(c.description).substr(0,90)}} ...</p>
+                                <p class="card-text">Prix : {{c.prix}} € / jour</p>
+                                <a class="btn btn-outline-light btn-sm" (click)="ouvrir(c)">plus de détail</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+
+
 </div>
+
+
 
 
 
