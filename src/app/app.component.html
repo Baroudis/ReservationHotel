@@ -8,7 +8,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="" routerLinkActive="active">
+        <a class="nav-link" routerLink="" >
           <i class="fa fa-home"></i>
           Accueil
         </a>
@@ -16,7 +16,7 @@
     </ul>
     <ul class="navbar-nav ">
       <li class="nav-item">
-        <a class="nav-link" href="/chambre" routerLinkActive="active">
+        <a class="nav-link" routerLink="/chambre" routerLinkActive="active">
           Chambre
         </a>
       </li>
@@ -31,23 +31,74 @@
     </ul>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="/reservation" routerLinkActive="active">
+        <a class="nav-link" routerLink="/reservation" routerLinkActive="active">
           <i class="fa fa-home"></i>
           Reservation
         </a>
       </li>
     </ul>
-    <!-- <div *ngIf="expToken"> -->
-      <ul class="navbar-nav mr-auto">
+      <div  class= "ms-auto" *ngIf="!this.services.auth" >
+      <ul  class="navbar-nav mr-auto me-5 aligne-left">
         <li class="nav-item active">
-          <a class="nav-link" href="/login" routerLinkActive="active">
+          <a class="nav-link" routerLink="/login" routerLinkActive="active">
             <i class="fa fa-home"></i>
             Login
           </a>
         </li>
       </ul>
+    </div>
+    
+
+    <div class= "ms-auto" *ngIf="this.services.auth">
+      <ul  class="navbar-nav mr-auto d-flex">
+        <li class="nav-item active">
+          <a class="nav-link">
+            <i class="fa fa-home"></i>
+            VOYAGEUR   {{userNamed}}
+          </a>
+        </li>
+      </ul>
+      <ul  class="navbar-nav mr-auto d-flex">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/login" routerLinkActive="active" (click)="this.log.destroy()">
+            <i class="fa fa-home"></i>
+            ....logOut
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
-  <!-- </div>  -->
+
 </nav>
 
 <router-outlet></router-outlet>
+
+<div class="container">
+  <h2 class="mt-5 mb-4">Angular Stripe Checkout Example</h2>
+  <div class="col-md-5 mb-2">
+    <button (click)="makePayment(1)" class="btn btn-danger btn-block">Pay $1</button>
+  </div>
+  <div class="col-md-5 mb-2">
+    <button (click)="makePayment(25)" class="btn btn-primary btn-block">Pay $25</button>
+  </div>
+  <div class="col-md-5">
+    <button (click)="makePayment(35)" class="btn btn-success btn-block">Pay $35</button>
+  </div>
+</div>
+
+
+
+<!-- (click)="destroy()" -->
+
+
+<!-- <div class="col-md-2 me-auto mt-5 ms-1"   [(ngModel)]="mots">
+  <p class="btn- btn-success pt-2 pb-2 pr-2 " (click)="onCategory(c)" *ngFor="let c of categories"> {{c}}</p>
+</div> -->
+
+<!-- <div class="col-md-4 me-auto mt-5 ms-1"   [(ngModel)]="mots">
+  <button id="simple" class="btn  ms-1 align-items-start border border-dark" (click)="chambreSimple()"  value="simple">Chambre Simple</button>
+  <button id="double" class="btn  ms-1 align-items-start border border-dark" (click)="chambreDouble()" value ="double">Chambre double</button>
+  <button id="triple" class="btn  ms-1 align-items-start border border-dark" (click)="chambreTriple()" value ="triple">Chambre Triple</button>
+  <button id="quadruple" class="btn  ms-1 align-items-start border border-dark" (click)="chambreQuadruple()" value="quadruple">Chambre Quadruple</button>
+  
+</div> -->

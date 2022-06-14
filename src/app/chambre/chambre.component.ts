@@ -2,6 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ChambreService } from '../services/chambre.service';
 import { DatePipe } from '@angular/common';
+import { NgxSliderModule, Options } from '@angular-slider/ngx-slider';
+
+
+
+
+//import { exists } from 'fs';
 //import { Pipe } from '@angular/core';
 // import { Console } from 'console';
 
@@ -13,9 +19,11 @@ import { DatePipe } from '@angular/common';
   selector: 'app-chambre',
   templateUrl: './chambre.component.html',
   styleUrls: ['./chambre.component.css'],
-  providers: [DatePipe]
+  providers: [DatePipe, Options, NgxSliderModule] 
 })
 export class ChambreComponent implements OnInit {
+
+categories=["simple","double", "triple","quadruple"]
 
   item: any;
 
@@ -55,6 +63,7 @@ export class ChambreComponent implements OnInit {
   min:any 
   max:any 
   mots:any
+  p: number = 1;
   
   
   nomDuClient:any;
@@ -75,10 +84,16 @@ export class ChambreComponent implements OnInit {
   chambres() {
     this.chambreService.getchambres().subscribe(data => {
       this.chambre = data;
-      console.log(this.chambre)
+      //console.log(this.chambre?.type)
+      //console.log(this.chambre)
+      //console.log(Object.values.(this.chambre))
       //this.chambrefiltrer()
+     console.log(Object.keys(this.chambre))
+     //() => console.log('component', Object.keys(this.chambre))
+      //console.log(JSON.stringify(this.chambre.type))
+     
     })
-  }
+  } 
 
   chambrefiltrer(){
     this.chambreService.getchambresFiltrer(this.min, this.max).subscribe(data => {
@@ -87,47 +102,95 @@ export class ChambreComponent implements OnInit {
       // this.chambrefiltrer();
   })
 }
-chambreSimple(){
-  this.chambreService.getchambresimple().subscribe(data=> {
+Toutchambre(lop:any){
+  this.chambreService.getchambreType(lop).subscribe(data=> {
     this.chambre = data
-    document.getElementById("simple")?.classList.add("btn-info")
-    document.getElementById("double")?.classList.remove("btn-info")
-    document.getElementById("triple")?.classList.remove("btn-info")
-    document.getElementById("quadruple")?.classList.remove("btn-info")
+    // document.getElementById("catt")?.classList.add("btn-info")
+    // document.getElementById("catt")?.classList.remove("btn-success")
+    // document.getElementById("triple")?.classList.remove("btn-info")
+    // document.getElementById("quadruple")?.classList.remove("btn-info")
 
     console.log(this.chambre)
   })
 }
-chambreDouble(){
-  this.chambreService.getchambreType("double").subscribe(data=> {
-    this.chambre = data
-    document.getElementById("simple")?.classList.remove("btn-info")
-    document.getElementById("double")?.classList.add("btn-info")
-    document.getElementById("triple")?.classList.remove("btn-info")
-    document.getElementById("quadruple")?.classList.remove("btn-info")
-    console.log(this.chambre)
-  })
+Changement(color:any){
+
+  //console.log(color)
+  switch(color){
+    case 'simple' :   document.getElementById("catt")?.classList.add("btn-info")
+                      document.getElementById("catt")?.classList.remove("btn-success")
+    break
+    case 'double' : document.getElementById("catt")?.classList.add("btn-danger")
+                    document.getElementById("catt")?.classList.remove("btn-success")
+    break 
+    case 'triple' : document.getElementById("catt")?.classList.add("btn-warning")
+                    document.getElementById("catt")?.classList.remove("btn-success")
+    break
+    case 'quadruple' : 
+    break
+  }
+  
+  
 }
-chambreTriple(){
-  this.chambreService.getchambreType("triple").subscribe(data=> {
-    this.chambre = data
-    document.getElementById("simple")?.classList.remove("btn-info")
-    document.getElementById("double")?.classList.remove("btn-info")
-    document.getElementById("triple")?.classList.add("btn-info")
-    document.getElementById("quadruple")?.classList.remove("btn-info")
-    console.log(this.chambre)
-  })
-}
-chambreQuadruple(){
-  this.chambreService.getchambreType("quadruple").subscribe(data=> {
-    this.chambre = data
-    document.getElementById("simple")?.classList.remove("btn-info")
-    document.getElementById("double")?.classList.remove("btn-info")
-    document.getElementById("triple")?.classList.remove("btn-info")
-    document.getElementById("quadruple")?.classList.add("btn-info")
-    console.log(this.chambre)
-  })
-}
+minValue: number = 100;
+maxValue: number = 400;
+options: Options = {
+  floor: 0,
+  ceil: 500,
+  // translate: (value: number, label: LabelType): string => {
+  //   switch (label) {
+  //     case LabelType.Low:
+  //       return '<b>Min price:</b> $' + value;
+  //     case LabelType.High:
+  //       return '<b>Max price:</b> $' + value;
+  //     default:
+  //       return '$' + value;
+  //   }
+  // }
+};
+
+
+// chambreSimple(){
+//   this.chambreService.getchambresimple().subscribe(data=> {
+//     this.chambre = data
+//     document.getElementById("simple")?.classList.add("btn-info")
+//     document.getElementById("double")?.classList.remove("btn-info")
+//     document.getElementById("triple")?.classList.remove("btn-info")
+//     document.getElementById("quadruple")?.classList.remove("btn-info")
+
+//     console.log(this.chambre)
+//   })
+// }
+// chambreDouble(){
+//   this.chambreService.getchambreType("double").subscribe(data=> {
+//     this.chambre = data
+//     document.getElementById("simple")?.classList.remove("btn-info")
+//     document.getElementById("double")?.classList.add("btn-info")
+//     document.getElementById("triple")?.classList.remove("btn-info")
+//     document.getElementById("quadruple")?.classList.remove("btn-info")
+//     console.log(this.chambre)
+//   })
+// }
+// chambreTriple(){
+//   this.chambreService.getchambreType("triple").subscribe(data=> {
+//     this.chambre = data
+//     document.getElementById("simple")?.classList.remove("btn-info")
+//     document.getElementById("double")?.classList.remove("btn-info")
+//     document.getElementById("triple")?.classList.add("btn-info")
+//     document.getElementById("quadruple")?.classList.remove("btn-info")
+//     console.log(this.chambre)
+//   })
+// }
+// chambreQuadruple(){
+//   this.chambreService.getchambreType("quadruple").subscribe(data=> {
+//     this.chambre = data
+//     document.getElementById("simple")?.classList.remove("btn-info")
+//     document.getElementById("double")?.classList.remove("btn-info")
+//     document.getElementById("triple")?.classList.remove("btn-info")
+//     document.getElementById("quadruple")?.classList.add("btn-info")
+//     console.log(this.chambre)
+//   })
+// }
 
   date_arrive() {
     this.chambreService.getdateA().subscribe(lesdat => {
@@ -148,7 +211,7 @@ chambreQuadruple(){
     document.getElementById("reserva")?.classList.remove("d-none")
 
   this.reservation = c,
-  console.log(this.reservation)
+  console.log(this.reservation.prix)
 
   }
 

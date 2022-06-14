@@ -9,33 +9,44 @@ export class ChambreService {
 
   constructor(private http : HttpClient) { }
 
+auth : boolean = false
+debut = "http://localhost:8080/"
+
+
+isAuth(){
+  return this.auth = true
+}
 
   getchambres(){
-    return this.http.get("http://localhost:3000/chambre");
+    return this.http.get( this.debut + "chambre");
   }
 
   getdateA(){
-    return this.http.get("http://localhost:3000/datearrive");
+    return this.http.get(this.debut +"datearrive");
   }
 
   getdateD(){
-    return this.http.get("http://localhost:3000/datedepart")
+    return this.http.get(this.debut +"datedepart")
   }
 
   saveProduit(reserv:any){
-    return this.http.post("http://localhost:3000/reservation", reserv)
+    return this.http.post(this.debut +"reservation", reserv)
   }
 
   getchambresFiltrer(min:any, max:any){
-    return this.http.get("http://localhost:3000/chambre?prix_gte="+min+"&prix_lte="+max);
+    return this.http.get(this.debut +"chambre?prix_gte="+min+"&prix_lte="+max);
   }
 
   getchambresimple(){
-    return this.http.get("http://localhost:3000/chambre?type=simple");
+    return this.http.get(this.debut +"chambre?type=simple");
   }
 
   getchambreType(mots:any){
-    return this.http.get("http://localhost:3000/chambre?type="+mots);
+    return this.http.get(this.debut + "chambre?type="+ mots);
   }
+
+//   getpagination(page:any){
+//   return this.http.get(this.debut + "_page="+ page + "& imite=3")
+// }
 
 }

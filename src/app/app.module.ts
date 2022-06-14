@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 import { HttpClientModule } from '@angular/common/http'
 
@@ -16,6 +17,12 @@ import { AuthModule } from '@auth0/auth0-angular';
 import { LoginComponent } from './login/login.component';
 import { JwtModule, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { FormulaireComponent } from './formulaire/formulaire.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+//import { NgxSliderModule } from '@angular-slider/ngx-slider';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
+
 //import { FormBuilder } from '@angular/forms';
 //import { ReactiveFormsModule } from '@angular/forms';
 
@@ -26,13 +33,18 @@ import { JwtHelperService } from '@auth0/angular-jwt';
     ServicesComponent,
     ReservationComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    FormulaireComponent
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
+    NgxPaginationModule,
+    MatSliderModule,
+    // NgxSliderModule,
     AuthModule.forRoot({
       domain:'dev-mvss-c6p.eu.auth0.com',
       clientId: 'qC0JwInfJAyoicru9SngRGYsvkpsXDQh'
@@ -41,7 +53,8 @@ import { JwtHelperService } from '@auth0/angular-jwt';
       config: {
         tokenGetter : () => localStorage.getItem('access_token')
       }
-    })
+    }),
+    BrowserAnimationsModule
     //ReactiveFormsModule
      //FormBuilder
 

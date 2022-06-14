@@ -20,8 +20,18 @@ img{
     }
     }
     @media (min-width: 769px) {
+        
     .gradient-custom-2 {
     border-top-right-radius: .3rem;
     border-bottom-right-radius: .3rem;
     }
     }
+
+    body{
+        height: 800px;
+    }
+    p{
+        color: aliceblue;
+    }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

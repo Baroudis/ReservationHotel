@@ -1,0 +1,70 @@
+<!-- <p>formulaire works!</p>
+
+<div class="container">
+    <form [formGroup]="articleForm" (ngSubmit)='addArticle()'>
+
+        <div class="form-group">
+            <label for="InputTitle">Title</label>
+            <input type="text" class="form-control" placeholder="Enter title" formControlName="title" required>
+            <div *ngIf="title?.invalid && (title?.dirty || title?.touched)" class="alert alert-danger">
+
+                <div *ngIf="title?.errors?.['required']">
+                    Title is required.
+                </div>
+                <div *ngIf="title?.errors?.['minlength']">
+                    Title must be at least 4 characters long.
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="InputPrice">Price</label>
+            <input type="text" class="form-control" id="InputPrice" placeholder="Enter price" formControlName="price"
+                required>
+                <div *ngIf="price?.invalid && (price?.dirty || price?.touched)" class="alert alert-danger">
+
+                    <div *ngIf="price?.errors?.['required']">
+                        Price is required.
+                    </div>
+                </div>
+
+        </div>
+
+        <div class="form-group">
+            <label for="InputNameImage">Image URL</label>
+            <input type="text" class="form-control" id="InputImageURL" placeholder="Enter an image URL"
+                formControlName="imageURL" required>
+                <div *ngIf="imageURL?.invalid && (imageURL?.dirty || imageURL?.touched)" class="alert alert-danger">
+
+                    <div *ngIf="imageURL?.errors?.['required']">
+                        Image URL is required.
+                    </div>
+                </div>
+
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description</label><br>
+            <textarea id="description" cols="30" rows="10" formControlName="description" required></textarea>
+            <div *ngIf="description?.invalid && (description?.dirty || description?.touched)" class="alert alert-danger">
+
+                <div *ngIf="description?.errors?.['required']">
+                    Description is required.
+                </div>
+                <div *ngIf="description?.errors?.['minlength']">
+                    Description must be at least 4 characters long.
+                </div>
+            </div>
+        </div>
+
+        <div class="message info" *ngIf="message">Article created</div>
+
+        <button type="submit" class="btn btn-primary">Add an article</button>
+    </form>
+
+
+
+
+<br>
+
+</div> -->
